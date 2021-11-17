@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getCostsFullfiled } from "./reducers/getCostsFullfiled";
 import { getCostsPendig } from "./reducers/getCostsPending";
 import { getCostsRejected } from "./reducers/getCostsRejected";
+import { addItemReucer } from "./reducers/addItem";
 
 export const getCosts = createAsyncThunk("costs/fetchCosts", async () => {
   const res = await fetch(
@@ -44,7 +45,9 @@ const initialState: costsState = {
 const costsSlice = createSlice({
   name: "costs",
   initialState,
-  reducers: {},
+  reducers: {
+    addItem: addItemReucer,
+  },
   extraReducers: (builder) =>
     builder
       .addCase(getCosts.fulfilled, getCostsFullfiled)
@@ -52,5 +55,5 @@ const costsSlice = createSlice({
       .addCase(getCosts.rejected, getCostsRejected),
 });
 
-export const {} = costsSlice.actions;
+export const { addItem } = costsSlice.actions;
 export default costsSlice.reducer;
