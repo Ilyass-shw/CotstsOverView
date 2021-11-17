@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import costsReducer from "./costSlice/costSlice";
+import costsReducer from "../costsSlice/costsSlice";
+
 export const store = configureStore({
   reducer: {
     costs: costsReducer,

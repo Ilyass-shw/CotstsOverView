@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react'
-import { getCostsData } from '../costSlice/costSlice'
-import { useAppDispatch } from '../hooks'
+import { useEffect } from "react";
+import { getCosts } from "../costsSlice/costsSlice";
+import { useAppDispatch } from "./hooks";
 
 const App = () => {
-    const dispatch = useAppDispatch()
-    useEffect(() => {
-        dispatch(getCostsData())
-    }, [])
-    return (
-        <p>
-            buyye
-        </p>
-    )
-}
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getCosts());
 
-export default App
+  }, []);
+  return <div>byeee</div>;
+};
+
+export default App;
